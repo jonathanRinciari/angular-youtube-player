@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PlayerConfig } from 'projects/angular-youtube-player/src/public_api';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-youtube-player';
+  config: PlayerConfig = {
+    videoId: 'eP4j6GF6iM8',
+    autoPlay: false
+  };
+
+  handlePause(e) {
+    console.log(e);
+  }
 }

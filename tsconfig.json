@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "angular-youtube-player": [
+        "dist/angular-youtube-player"
+      ],
+      "angular-youtube-player/*": [
+        "dist/angular-youtube-player/*"
+      ]
+    }
   }
 }

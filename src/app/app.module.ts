@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { PlayerModule } from '../player/player.module';
+import { AngularYoutubePlayerModule } from 'angular-youtube-player';
+
 
 @NgModule({
   declarations: [
@@ -10,7 +11,7 @@ import { PlayerModule } from '../player/player.module';
   ],
   imports: [
     BrowserModule,
-    PlayerModule
+    AngularYoutubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
