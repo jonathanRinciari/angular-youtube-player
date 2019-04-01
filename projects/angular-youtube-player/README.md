@@ -12,6 +12,15 @@ Install Using NPM
 ```
 
 
+## Running Demo
+
+ git clone [angular-youtube-player](https://github.com/jonathanRinciari/angular-youtube-player.git)
+
+ cd ./angular-youtube-player 
+
+ ng serve
+
+
 ## Adding Module 
 
 ```javascript
@@ -91,31 +100,32 @@ export class AppModule { }
 
 ### PlayerConfig API
 
-|                                                                                                              | 
-|--------------------------------------------------------------------------------------------------------------| 
-| Property Name,Property Type,Description                                                                      | 
-| VideoId,String,The id of the video that you would like to embed                                              | 
-| Width,String,"The width of the video player, i.e '300px'"                                                    | 
-| Height,String,"The height of the video player, i.e '300px'"                                                  | 
-| startSeconds,Number,The start time in seconds                                                                | 
-| endSeconds,Number,The end time in seconds                                                                    | 
-| autoPlayer,Boolean,If the video should auto play the video                                                   | 
-| mediaContentUrl,String,The url of the video you would like to embed                                          | 
-| suggestQuality,'large' | 'small' | 'medium' | 'hd720' | 'highres' | default,Specfiy the quality of the video | 
+|                 |                                                              |                                                  | 
+|-----------------|--------------------------------------------------------------|--------------------------------------------------| 
+| Property Name   | Property Type                                                | Description                                      | 
+| VideoId         | String                                                       | The id of the video that you would like to embed | 
+| Width           | String                                                       | "The width of the video player, i.e '300px'"     | 
+| Height          | String                                                       | "The height of the video player, i.e '300px'"    | 
+| startSeconds    | Number                                                       | The start time in seconds                        | 
+| endSeconds      | Number                                                       | The end time in seconds                          | 
+| autoPlayer      | Boolean                                                      | If the video should auto play the video          | 
+| mediaContentUrl | String                                                       | The url of the video you would like to embed     | 
+| suggestQuality  | 'large' | 'small' | 'medium' | 'hd720' | 'highres' | default | Specfiy the quality of the video                 | 
 
 
 ### AngularYoutubePlayerComponent API
 
-|                                                                                 | 
-|---------------------------------------------------------------------------------| 
-| Property,Type,Description                                                       | 
-| config,PlayerConfig,Configuration of the video player                           | 
-| videoList,string[],Array of video urls or ids                                   | 
-| ready,EventEmitter,Notify when the video is ready                               | 
-| error,EventEmitter,Notify when an error has occured                             | 
-| stateChange,EventEmitter,Notify when the state of the player has changed        | 
-| playbackRateChange,EventEmitter,Notify when the playback rate has changed       | 
-| playbackQualityChange,EventEmitter,Notify when the playback quality has changed | 
+|                       |              |                                                 | 
+|-----------------------|--------------|-------------------------------------------------| 
+| Property              | Type         | Description                                     | 
+| config                | PlayerConfig | Configuration of the video player               | 
+| videoList             | string[]     | Array of video urls or ids                      | 
+| ready                 | EventEmitter | Notify when the video is ready                  | 
+| error                 | EventEmitter | Notify when an error has occured                | 
+| stateChange           | EventEmitter | Notify when the state of the player has changed | 
+| playbackRateChange    | EventEmitter | Notify when the playback rate has changed       | 
+| playbackQualityChange | EventEmitter | Notify when the playback quality has changed    | 
+
 
 
     
