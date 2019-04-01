@@ -1,27 +1,135 @@
-# NgYoutubePlayer
+# Angular Tippy.JS Directive & Service
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
+  This is a wrapper around the Tippy.js. Easily create tooltips using a directive or utilize the service
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+Install Using NPM
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```javascript
+  npm install --save angular-tippy
+```
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Running Demo
 
-## Running unit tests
+ git clone [angular-youtube-player](https://github.com/jonathanRinciari/angular-youtube-player.git)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ cd ./angular-youtube-player 
 
-## Running end-to-end tests
+ ng serve
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Adding Module 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```javascript
+
+import { AppComponent } from './app.component';
+import { AngularYoutubePlayerModule } from 'angular-youtube-player';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AngularYoutubePlayerModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
+
+## Usage
+
+#### *.component.html
+```html
+<ng-youtube-player 
+  (stateChange)="handleStateChange($event)"
+  [config]="config">
+</ng-youtube-player>
+```
+
+
+#### *.component.ts
+```javascript
+  export class AppComponent {
+    config: PlayerConfig;
+    constructor() {
+      this.config = {
+        videoId: 'eP4j6GF6iM8',
+        autoPlay: false
+      };
+    }
+
+    handleStateChange(event) {
+      // Do Something when state changes i.e pause / play
+    }
+  }
+```
+
+## API
+
+```typescript
+  interface PlayerConfig {
+    videoId?: string;
+    width?: string;
+    height?: string;
+    startSeconds?: number;
+    autoPlay?: boolean;
+    mediaContentUrl?: string;
+    endSeconds?: number;
+    suggestedQuality?: 'large' | 'medium' | 'small';
+  }
+
+  interface AngularYoutubePlayerComponent {
+    @ViewChild('player') private player: ElementRef;
+    @Input() config: PlayerConfig;
+    @Input() videosList: string[];
+    @Output() ready: EventEmitter;
+    @Output() error: EventEmitter;
+    @Output() stateChange: EventEmitter;
+    @Output() playbackRateChange: EventEmitter;;
+    @Output() playbackQualityChange: EventEmitter;
+  }
+```
+
+
+### PlayerConfig API
+
+|                                                                                                              | 
+|--------------------------------------------------------------------------------------------------------------| 
+| Property Name,Property Type,Description                                                                      | 
+| VideoId,String,The id of the video that you would like to embed                                              | 
+| Width,String,"The width of the video player, i.e '300px'"                                                    | 
+| Height,String,"The height of the video player, i.e '300px'"                                                  | 
+| startSeconds,Number,The start time in seconds                                                                | 
+| endSeconds,Number,The end time in seconds                                                                    | 
+| autoPlayer,Boolean,If the video should auto play the video                                                   | 
+| mediaContentUrl,String,The url of the video you would like to embed                                          | 
+| suggestQuality,'large' | 'small' | 'medium' | 'hd720' | 'highres' | default,Specfiy the quality of the video | 
+
+
+### AngularYoutubePlayerComponent API
+
+|                                                                                 | 
+|---------------------------------------------------------------------------------| 
+| Property,Type,Description                                                       | 
+| config,PlayerConfig,Configuration of the video player                           | 
+| videoList,string[],Array of video urls or ids                                   | 
+| ready,EventEmitter,Notify when the video is ready                               | 
+| error,EventEmitter,Notify when an error has occured                             | 
+| stateChange,EventEmitter,Notify when the state of the player has changed        | 
+| playbackRateChange,EventEmitter,Notify when the playback rate has changed       | 
+| playbackQualityChange,EventEmitter,Notify when the playback quality has changed | 
+
+
+    
+## License
+
+
+
+Apache License Version 2.0, January 2004
