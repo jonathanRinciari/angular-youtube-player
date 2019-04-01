@@ -106,6 +106,16 @@ export class AppModule { }
 
 ### AngularYoutubePlayerComponent API
 
+|                                                                                 | 
+|---------------------------------------------------------------------------------| 
+| Property,Type,Description                                                       | 
+| config,PlayerConfig,Configuration of the video player                           | 
+| videoList,string[],Array of video urls or ids                                   | 
+| ready,EventEmitter,Notify when the video is ready                               | 
+| error,EventEmitter,Notify when an error has occured                             | 
+| stateChange,EventEmitter,Notify when the state of the player has changed        | 
+| playbackRateChange,EventEmitter,Notify when the playback rate has changed       | 
+| playbackQualityChange,EventEmitter,Notify when the playback quality has changed | 
 
 
     
