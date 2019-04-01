@@ -11,7 +11,7 @@ import { PlayerConfig } from './angular-youtube-player.model';
   styles: []
 })
 export class AngularYoutubePlayerComponent implements OnInit {
-  @ViewChild('player') player: ElementRef;
+  @ViewChild('player') private player: ElementRef;
   @Input() config: PlayerConfig;
   @Input() videosList: string[];
   @Output() ready = new EventEmitter();
