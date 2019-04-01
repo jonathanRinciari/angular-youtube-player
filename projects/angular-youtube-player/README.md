@@ -19,7 +19,6 @@ Install Using NPM
 import { AppComponent } from './app.component';
 import { AngularYoutubePlayerModule } from 'angular-youtube-player';
 
-
 @NgModule({
   declarations: [
     AppComponent
@@ -68,7 +67,6 @@ export class AppModule { }
 ```typescript
   interface PlayerConfig {
     videoId?: string;
-    videoUrl?: string;
     width?: string;
     height?: string;
     startSeconds?: number;
@@ -79,7 +77,7 @@ export class AppModule { }
   }
 
   interface AngularYoutubePlayerComponent {
-    @ViewChild('player') player: ElementRef;
+    @ViewChild('player') private player: ElementRef;
     @Input() config: PlayerConfig;
     @Input() videosList: string[];
     @Output() ready: EventEmitter;
@@ -90,7 +88,29 @@ export class AppModule { }
   }
 ```
 
+
+### PlayerConfig API
+
+|                                                                                                              | 
+|--------------------------------------------------------------------------------------------------------------| 
+| Property Name,Property Type,Description                                                                      | 
+| VideoId,String,The id of the video that you would like to embed                                              | 
+| Width,String,"The width of the video player, i.e '300px'"                                                    | 
+| Height,String,"The height of the video player, i.e '300px'"                                                  | 
+| startSeconds,Number,The start time in seconds                                                                | 
+| endSeconds,Number,The end time in seconds                                                                    | 
+| autoPlayer,Boolean,If the video should auto play the video                                                   | 
+| mediaContentUrl,String,The url of the video you would like to embed                                          | 
+| suggestQuality,'large' | 'small' | 'medium' | 'hd720' | 'highres' | default,Specfiy the quality of the video | 
+
+
+### AngularYoutubePlayerComponent API
+
+
+
     
 ## License
+
+
 
 Apache License Version 2.0, January 2004
