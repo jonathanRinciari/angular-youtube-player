@@ -1,5 +1,5 @@
 {
-  "name": "ng-youtube-player",
+  "name": "ng-youtube-iframe",
   "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^7.0.0",

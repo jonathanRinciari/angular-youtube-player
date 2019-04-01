@@ -3,7 +3,7 @@ import youTubePlayer from 'youtube-player';
 import { PlayerConfig } from './angular-youtube-player.model';
 
 @Component({
-  selector: 'ng-youtube-player',
+  selector: 'ng-youtube-iframe',
   template: `
     <div #player>
     </div>
